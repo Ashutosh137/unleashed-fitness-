@@ -30,8 +30,8 @@ const Equipment = () => {
            
         </div>
             <div className="d-flex justify-content-center flex-wrap p-2" >
-                {data.slice(pre1, next1).map((item) => {
-                    return <div className="w-25 my-4 card border-2 p-2" >
+                {data.slice(pre1, next1).map((item,index) => {
+                    return <div key={index} className="w-25 my-4 card border-2 p-2" >
                         <img className='img-fluid mb-3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwICRzybiwjOclTsg2xuiBTYr2q6dHdKEKHA&usqp=CAU" alt="" />
                         <label onClick={() => { fetch(item) }} className="text-center p-1 border-1 border-danger border m-auto">{item}</label>
                     </div>

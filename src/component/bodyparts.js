@@ -25,8 +25,8 @@ const Bodyparts = () => {
     return (
         <div className='m-auto bg-light rounded'>
             <div className="d-flex justify-content-center flex-wrap p-2" >
-                {data.slice(pre1, next1).map((item) => {
-                    return <div className="w-25 my-4 card border-2 p-2" >
+                {data.slice(pre1, next1).map((item,index) => {
+                    return <div key={index} className="w-25 my-4 card border-2 p-2" >
                         <img className='img-fluid mb-3' src="https://t4.ftcdn.net/jpg/02/19/15/99/240_F_219159923_iCk4Qp5HIlSU7eflsShBFMYwkutGMm9v.jpg" alt="" />
                         <label onClick={() => { fetch(item) }} className="text-centerp-1 border-1 border-danger border m-auto p-1">{item}</label>
                     </div>
@@ -42,7 +42,7 @@ const Bodyparts = () => {
                 <li className="page-item m-2">
                     {next1 >= data.length ? <button className="page-link disabled" ><i class="bi bi-arrow-right"></i></button> : <button className="page-link bg-pri mary" onClick={() => {
                         setpre1(pre1 + 4); setnext1(next1 + 4);
-                    }}><i class="bi bi-arrow-right"></i></button>}
+                    }}><i className="bi bi-arrow-right"></i></button>}
                 </li>
             </ul>
             <div className="container">
