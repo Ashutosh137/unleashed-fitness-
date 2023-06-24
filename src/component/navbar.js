@@ -15,16 +15,7 @@ const Navbar = () => {
                                 <Link to="/" className="nav-link active" aria-current="page">Home</Link>
                             </li>
                             <li className="nav-item m-auto mx-1">
-                                <Link to="/exercises" className="nav-link">exercise</Link>
-                            </li>
-                            <li className="nav-item m-auto mx-1">
-                                <Link to="/bodyparts" className="nav-link">body parts</Link>
-                            </li>
-                            <li className="nav-item m-auto mx-1">
-                                <Link to="/target muscles" className="nav-link">body muscles</Link>
-                            </li>
-                            <li className="nav-item m-auto mx-1">
-                                <Link to="/equipments" className="nav-link">equipment</Link>
+                                <Link to="/allexercises" className="nav-link">exercises</Link>
                             </li>
                         </ul>
                         <form className="d-flex">
