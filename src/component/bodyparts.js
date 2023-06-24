@@ -25,7 +25,7 @@ const Bodyparts = () => {
     return (
         <div className='m-auto bg-light rounded'>
             <div className="d-flex justify-content-center flex-wrap p-2" >
-                {data.slice(pre1, next1).map((item,index) => {
+                {data.slice(pre1, next1).map((item, index) => {
                     return <div key={index} className="w-25 my-4 card border-2 p-2" >
                         <img className='img-fluid mb-3' src="https://t4.ftcdn.net/jpg/02/19/15/99/240_F_219159923_iCk4Qp5HIlSU7eflsShBFMYwkutGMm9v.jpg" alt="" />
                         <label onClick={() => { fetch(item) }} className="text-centerp-1 border-1 border-danger border m-auto p-1">{item}</label>
@@ -46,7 +46,7 @@ const Bodyparts = () => {
                 </li>
             </ul>
             <div className="container">
-                <Search exercise={search} n={2}/>
+                <Search exercise={search} n={2} />
             </div>
 
         </div >

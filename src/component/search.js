@@ -1,23 +1,23 @@
-import React,{useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 export const Search = (props) => {
-    const n=props.n;
+    const n = props.n;
     const [pre, setpre] = useState(0);
     const [next, setnext] = useState(n);
-    const data=props.exercise;
+    const data = props.exercise;
     const [search, setsearch] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         setsearch(data);
-    },[data])
+    }, [data])
 
-  return (
-    <div className="container text-capitalize">
-        <div className="text-center">
-            {search[1]?<> <h2>showing results</h2></>:<></>}
-           
-        </div>
+    return (
+        <div className="container text-capitalize">
+            <div className="text-center">
+                {search[1] ? <> <h2>showing results</h2></> : <></>}
+
+            </div>
             <div className="d-flex flex-wrap border-bottom  border-3 py-2 border-danger rounded ">
                 {search.slice(pre, next).map(item => {
                     return <div className=" w-50 my-3 btn text-capitalize shadow-sm border-bottom border-3">
@@ -31,7 +31,7 @@ export const Search = (props) => {
                     </div>
                 })}
             </div>
-           {search[1]?<><ul className="pagination justify-content-center">
+            {search[1] ? <><ul className="pagination justify-content-center">
                 <li className="page-item m-3">
                     {pre <= 0 ? <button className="page-link disabled"><i class="bi bi-arrow-left "></i></button> : <button className="page-link" onClick={() => {
                         setpre(pre - n); setnext(next - n);
@@ -43,9 +43,9 @@ export const Search = (props) => {
                         setpre(pre + n); setnext(next + n);
                     }}><i class="bi bi-arrow-right"></i></button>}
                 </li>
-            </ul></>:<></>}
-            
+            </ul></> : <></>}
+
         </div>
 
-  )
+    )
 }

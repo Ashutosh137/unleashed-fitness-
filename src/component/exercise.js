@@ -63,7 +63,7 @@ const Exercise = () => {
 
                 </div>
                 <div className='my-2 container'>
-                    <h1  className=' my-2 border-2 border-bottom border-danger'>similar equipments exercise</h1>
+                    <h1 className=' my-2 border-2 border-bottom border-danger'>similar equipments exercise</h1>
                     <div className="container">
                         <Search exercise={similar_equipment} n={2} />
                     </div>
