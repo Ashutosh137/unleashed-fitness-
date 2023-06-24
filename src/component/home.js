@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Bodyparts from './bodyparts';
 import Equipment from './equipment';
 import Muscles from './muscles';

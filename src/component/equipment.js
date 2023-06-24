@@ -40,14 +40,14 @@ const Equipment = () => {
             </div>
             <ul className="pagination w-25 px-2  m-auto mb-3 border-2 border-danger border rounded justify-content-center">
                 <li className="page-item m-2">
-                    {pre1 <= 0 ? <button className="page-link disabled"><i class="bi bi-arrow-left"></i></button> : <button className="page-link" onClick={() => {
+                    {pre1 <= 0 ? <button className="page-link disabled"><i className="bi bi-arrow-left"></i></button> : <button className="page-link" onClick={() => {
                         setpre1(pre1 - 4); setnext1(next1 - 4);
-                    }} ><i class="bi bi-arrow-left"></i></button>}
+                    }} ><i className="bi bi-arrow-left"></i></button>}
                 </li>
                 <li className="page-item m-2">
-                    {next1 >= data.length ? <button className="page-link disabled" ><i class="bi bi-arrow-right"></i></button> : <button className="page-link bg-pri mary" onClick={() => {
+                    {next1 >= data.length ? <button className="page-link disabled" ><i className="bi bi-arrow-right"></i></button> : <button className="page-link bg-pri mary" onClick={() => {
                         setpre1(pre1 + 4); setnext1(next1 + 4);
-                    }}><i class="bi bi-arrow-right"></i></button>}
+                    }}><i className="bi bi-arrow-right"></i></button>}
                 </li>
             </ul>
             <div className="container">
