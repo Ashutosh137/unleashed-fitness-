@@ -32,34 +32,41 @@ const Exercise = () => {
 
     return (
         <>
-            <div className="container row">
-                <div className="img col">
-                    <img src={exercise.gifUrl} alt="net err" />
+            <div className="container text-capitalize my-2">
+                <div className="text-center h3">
+                    <h3 className='h4 fw-bold border-bottom border-1 border-dark py-2'>{exercise.name}</h3>
                 </div>
-                <div className="container col">
-                    <h2>{exercise.name}</h2>
-                    <p className="h5">exercise keep you strong {exercise.name} is one of the best exercise to target your {exercise.target} it will help you to improve your mood and energy </p>
-                    <div className="d-flex">
-                        <label>{exercise.target}</label>
-
+                <div className="d-flex flex-wrap my-4">
+                    <div className="w-50 m-auto px-3">
+                        <img className='rounded img-fluid' src={exercise.gifUrl} alt="net err" />
                     </div>
-                    <div className="d-flex">
-                        <label>{exercise.muscles}</label></div>
-                    <div className="d-flex">
-                        <label>{exercise.equipment}</label></div>
+                    <div className="w-50 px-2 ">
+                        <h2>{exercise.name}</h2>
+                        <p className="h5 mx-1">exercise keep you strong , {exercise.name} is one of the best exercise to target your {exercise.target} it will help you to improve your mood and energy </p>
+                        <div className="d-flex m-2">
+                            <h5 className='mx-1 h4'>target</h5>
+                            <label className='h5 mx-1 border-bottom border-2 border-danger'>{exercise.target}</label>
+                        </div>
+                        <div className="d-flex m-2">
+                            <h5 className='mx-1 h4'>muscles</h5>
+                            <label className='h5 mx-1 border-bottom border-2 border-danger'>{exercise.muscles}</label></div>
+                        <div className="d-flex m-2">
+                            <h5 className='mx-1 h4'>equipment used</h5>
+                            <label className='h5 mx-1 border-bottom border-2 border-danger'>{exercise.equipment}</label></div>
+                    </div>
                 </div>
-                <div>
-                    <h1>similar target muscles exercise</h1>
-                    <div className="row">
-                        <Search exercise={similar_target}  n={2}/>
+                <div className='my-2 container'>
+                    <h1 className=' my-2 border-2 border-bottom border-danger'>similar target muscles exercise</h1>
+                    <div className="container">
+                        <Search exercise={similar_target} n={2} />
                     </div>
 
                 </div>
-                <div>
-                    <h1>similar equipments exercise</h1>
-                </div>
-                <div>
-                    <Search exercise={similar_equipment}  n={2}/>
+                <div className='my-2 container'>
+                    <h1  className=' my-2 border-2 border-bottom border-danger'>similar equipments exercise</h1>
+                    <div className="container">
+                        <Search exercise={similar_equipment} n={2} />
+                    </div>
                 </div>
             </div>
         </>

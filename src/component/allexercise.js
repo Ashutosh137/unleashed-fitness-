@@ -15,7 +15,7 @@ const Allexercise = () => {
   
     return (
         <div className='container'>
-            <Search exercise={data}/>
+            <Search exercise={data} n={10}/>
         </div>
     )
 }

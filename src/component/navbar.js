@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
@@ -12,17 +12,12 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav text-center h5  m-auto mb-2 mb-lg-0">
                             <li className="nav-item m-auto mx-1">
-                                <Link to="/" className="nav-link active" aria-current="page">Home</Link>
+                                <Link to="/" className="nav-link active h4" aria-current="page">Home</Link>
                             </li>
                             <li className="nav-item m-auto mx-1">
-                                <Link to="/allexercises" className="nav-link">exercises</Link>
+                                <Link to="/allexercises" className="nav-link h4">exercises</Link>
                             </li>
                         </ul>
-                        <form className="d-flex">
-                            <input className="form-control me-2" type="search" placeholder="Search for any exercise" aria-label="Search" />
-                            <button className="btn btn-outline-success"  type="submit"
-                            >Search</button>
-                        </form>
                     </div>
                 </div>
             </nav>

@@ -10,3 +10,9 @@
     background-image: linear-gradient(to left bottom, #e3a0c6, #d98dc7, #ca7bcb, #b36cd1, #9461da, #7a70ea, #567ef6, #008aff, #00a9ff, #00c2ff, #00d8f1, #44ebe0);
     background-size: cover;
 }
+
+.bg{
+     background-repeat: no-repeat;
+    background-image: linear-gradient(to left bottom, #e3a0c6, #d98dc7, #ca7bcb, #b36cd1, #9461da, #7a70ea, #567ef6, #008aff, #00a9ff, #00c2ff, #00d8f1, #44ebe0);
+    background-size: cover;
+}

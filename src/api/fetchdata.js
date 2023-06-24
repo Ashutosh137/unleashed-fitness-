@@ -2,7 +2,7 @@ const Fetchdata = async (url) => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': "f3b7b288f6mshd7cef5647a7b5c0p15d59bjsn05cc46c940e4",
+            'X-RapidAPI-Key': "d20d31456fmsh2662da9faa7b729p157270jsndb6c64a41fd0",
             'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
         }
     };
