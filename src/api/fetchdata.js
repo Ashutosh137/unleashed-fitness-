@@ -1,16 +1,44 @@
-const Fetchdata = async (url) => {
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': "d20d31456fmsh2662da9faa7b729p157270jsndb6c64a41fd0",
-            'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
-        }
-    };
+import API_KEY from "../config";
+const options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': API_KEY,
+        'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+    }
+};
+const Fetchdata = async () => {
+    const dataq = ['bodyPartList', 'targetList', 'equipmentList']
+    var datat = {
+        bodyPartList: [],
+        targetList: [],
+        equipmentList: [],
+        allexercise: []
+    }
 
-    const response = await fetch(url, options).catch((err) => { console.log(err) });
-    const jsonData = await response.json();
-    return jsonData;
+    dataq.forEach(async (item) => {
+        if (!(datat.bodyPartList[1] || datat.targetList[1] || datat.equipmentList[1])) {
+            var response = await fetch(`https://exercisedb.p.rapidapi.com/exercises/${item}`, options).catch((err) => { console.log(err) })
+            response = await response.json()
+            datat[item] = response;
+        }
+    })
+
+    if (!datat.allexercise[1]) {
+        var response1 = await fetch(`https://exercisedb.p.rapidapi.com/exercises`, options).catch((err) => { console.log(err) })
+        response1 = await response1.json()
+        datat.allexercise = response1;
+    }
+
+    return datat;
+
 
 };
-export default Fetchdata;
+const Fetchdata1 = async (url) => {
+
+    var response = await fetch(url, options).catch((err) => { console.log(err) })
+    response = await response.json();
+    return response;
+}
+export { Fetchdata };
+export default (Fetchdata1)
 

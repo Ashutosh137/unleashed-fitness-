@@ -1,44 +1,71 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Bodyparts from './bodyparts';
 import Equipment from './equipment';
 import Muscles from './muscles';
+import MyContext from '../api/context';
+import { Search } from './search';
+
 const Home = () => {
+    const [searchLowerCase, setsearch] = useState("")
+    const [searchdata, setsearchdata] = useState([])
+    const { data: { allexercise } } = useContext(MyContext)
+
+    const handelsubmit = (e) => {
+        e.preventDefault();
+        const searchdata = allexercise.filter((item) => {
+            return item.name?.toLowerCase() === searchLowerCase ||
+                item.bodyparts?.toLowerCase().includes(searchLowerCase) ||
+                item.equipment?.toLowerCase().includes(searchLowerCase) ||
+                item.id?.toLowerCase().includes(searchLowerCase) ||
+                item.target?.toLowerCase().includes(searchLowerCase)
+
+        })
+        setsearchdata(searchdata);
+
+    }
     return (
-        <>
-            <div className="container shadow-lg main rounded my-4 py-5 text-capitalize">
-                <div className="row m-2">
-                    <div className="my-auto w-50 col">
+        <div className="container text-responsive my-5 rounded text-capitalize">
+            <div className="d-flex align-middle home">
+                <div className="m-auto main  d-flex w-50 h-50 rounded p-5 text-center">
+                    <div className="m-auto box">
                         <h1>sweet ,smile and repeat </h1><p>Train with Passion, Achieve Greatness</p>
-                        <button className='btn btn-danger m-2 text-capitalize'><a href="#main" className='text-decoration-none text-dark'>get started</a></button>
-                    </div>
-                    <img className='w-50 my-auto col rounded img-fluid' src="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1nfGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="gym trainer" />
-                </div>
-                <div className="my-5 z-1 m-3">
-                    <h1 className='text-center h2 my-5'>awesome exercises you should know</h1>
-                </div>
-                <div id='main' className="container">
-                    <div className="my-3">
-                        <h3 className=' h2 m-auto my-4 border-2 border-bottom border-dark p-2'>search by bodyparts</h3>
-                        <div className="container">
-                            <Bodyparts />
-                        </div>
-                    </div>
-                    <div className="my-3">
-                        <h3 className=' h2 m-auto my-4 border-2 border-bottom border-dark p-2'>search by target muscles</h3>
-                        <div className="container">
-                            <Muscles />
-                        </div>
-                    </div>
-                    <div className="my-3">
-                        <h3 className=' h2 m-auto my-4 border-2 border-bottom border-dark p-2'>search by equipment</h3>
-                        <div className="container">
-                            <Equipment />
-                        </div>
+                        <button className='btn btn-danger m-2 text-capitalize'><a href="#main" className='text-decoration-none text-light'>get started</a></button>
+
                     </div>
                 </div>
             </div>
+            <div className="my-5 m-3">
+                <h1 className='text-center h2 my-5'>awesome exercises you should know</h1>
+            </div>
+            <div className="container z-3">
+                <form onSubmit={(e) => handelsubmit(e)} className='d-flex justify-content-center container'>
+                    <input type="search" name='search' value={searchLowerCase} onChange={(e) => {
+                        setsearch(e.target.value.toLowerCase())
+                    }} className='text-dark p-3 m-2  fw-semibold  rounded w-100' placeholder='search your exercise' />
+                    <button type='submit' className='btn btn-danger m-2 fw-semibold'>Submit</button>
+                </form>
+                <div className="bg-light w-100">
+                    {searchdata[0] && <div className="container">
+                        <Search exercise={searchdata} n={2} />
+                    </div>}
+                </div>
+            </div>
+            <div id='main' className="container">
+                <div className="my-3">
+                    <h3 className=' h2 m-auto my-4 border-2 border-bottom border-dark p-2'>search by bodyparts</h3>
+                    <Bodyparts />
+                </div>
+                <div className="my-3">
+                    <h3 className=' h2 m-auto my-4 border-2 border-bottom border-dark p-2'>search by target muscles</h3>
+                    <Muscles />
+                </div>
+                <div className="my-3">
+                    <h3 className=' h2 m-auto my-4 border-2 border-bottom border-dark p-2'>search by equipment</h3>
+                    <Equipment />
+                </div>
+            </div>
+        </div>
 
-        </>
     )
 }
 
