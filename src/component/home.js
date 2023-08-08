@@ -37,11 +37,11 @@ const Home = () => {
             <div className="my-5 m-3">
                 <h1 className='text-center h2 my-5'>awesome exercises you should know</h1>
             </div>
-            <div className="container z-3">
+            <div className="container">
                 <form onSubmit={(e) => handelsubmit(e)} className='d-flex justify-content-center container'>
                     <input type="search" name='search' value={searchLowerCase} onChange={(e) => {
                         setsearch(e.target.value.toLowerCase())
-                    }} className='text-dark p-3 m-2  fw-semibold  rounded w-100' placeholder='search your exercise' />
+                    }} className='text-dark p-3 m-2  rounded w-100' placeholder='Search your exercise' />
                     <button type='submit' className='btn btn-danger m-2 fw-semibold'>Submit</button>
                 </form>
                 <div className="bg-light w-100">

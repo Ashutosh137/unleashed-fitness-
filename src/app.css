@@ -33,8 +33,19 @@ details summary {
     list-style: none;
 }
 .width{
-    min-width: 75%;
     padding: 12px;
+}
+.overflow-scroll{
+    overflow: scroll;
+}
+.overflow-scroll::-webkit-scrollbar{
+    display: none;
+}
+.absolute-filter{
+    position: relative;
+    margin-top: 70px;
+    margin-right: 100%;
+    z-index: 2;
 }
 
 .loader{
@@ -50,15 +61,26 @@ details summary {
     font-size: xx-large;
 }
 
-.text-responsive>p,button,input{
+.text-responsive>p,button{
         font-size: large;
         background: white;
   }
+.w-fixed{
+    width:350px ;
+    margin:auto;
+  }
+
 @media (max-width:650px) {
-    .text-responsive>label,button,input{
+    .text-responsive>label,button{
         font-size: 8px;
         text-transform: capitalize;
         padding: 1px;
+    }
+    .w-fixed{
+        width: 250px;
+    }
+    .text-responsive h5,h2,h1,h4{
+        font-size: medium;
     }
     .text-responsive .text-sm{
         font-size: smaller;
@@ -80,4 +102,17 @@ details summary {
     .home {
         margin: 0%;
     }
+}
+@media (max-width:350px) {
+    .text-responsive{
+        font-size: xx-small;
+    }
+    .text-responsive h5,h2,h1,h4{
+        font-size: medium;
+    }
+    .text-responsive label{
+        text-align: center;
+        font-size: 12px;
+    }
+    
 }

@@ -22,7 +22,7 @@ const Muscles = () => {
                 {search[1] ? <> <h2>showing results</h2></> : <></>}
 
             </div>
-            <div className="d-flex justify-content-center flex-wrap p-2" >
+            <div className="d-flex justify-content-center flex-wrap p-3 " >
                 {targetList.slice(pre1, next1).map((item, index) => {
                     return <div key={index} className="w-25 my-4 card border-2 p-2" >
                         <img className='img-fluid mb-3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyMyQqOKCPUxwvCBKi_WXiiNSnPhJmgoqRDQ&usqp=CAU" alt="" />
@@ -31,27 +31,26 @@ const Muscles = () => {
 
                 })}
             </div>
-            <div className="w-100">
-                <ul className="pagination width px-2 m-auto mb-3 border-2 border-danger border rounded justify-content-center">
+            <div className="w-75 m-auto">
+                <ul className="pagination width mb-3 border-2 border-danger border rounded justify-content-center">
                     <li className="page-item m-2">
                         {pre1 <= 0 ? <button className="page-link disabled"><i className="bi bi-arrow-left"></i></button> : <button className="page-link" onClick={() => {
                             setpre1(pre1 - 4); setnext1(next1 - 4);
                         }} ><i className="bi bi-arrow-left"></i></button>}
                     </li>
-                    {
-                        myList.map((item)=>{
-                           return <button className="m-1 p-3 curser-pointer rounded text-primary border-0 text-responsive" onClick={() => {
-                            setpre1(item*4); setnext1((item+1)*4);
-                        }}>{item+1}</button> 
-                        })
-                    }
+                    <li className='w-50 m-2 overflow-scroll justify-content-center d-flex'>
+                        {myList.map((item) => {
+                                return <button className="page-link mx-1 curser-pointer rounded text-primary border-0 text-responsive" onClick={() => {
+                                    setpre1(item * 4); setnext1((item + 1) * 4);
+                                }}>{item + 1}</button>
+                            })}
+                    </li>
                     <li className="page-item m-2">
-                        {next1 >= targetList.length ? <button className="page-link disabled" ><i className="bi bi-arrow-right"></i></button> : <button className="page-link bg-pri mary" onClick={() => {
+                        {next1 >= targetList.length ? <button className="page-link disabled" ><i className="bi bi-arrow-right"></i></button> : <button className="page-link " onClick={() => {
                             setpre1(pre1 + 4); setnext1(next1 + 4);
                         }}><i className="bi bi-arrow-right"></i></button>}
                     </li>
                 </ul>
-
             </div>
             <div className="container py-1">
                 <Search exercise={search} n={2} />
