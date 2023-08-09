@@ -17,14 +17,13 @@ export const Search = (props) => {
     return (<>
         {search[0] ? <div className="container rounded bg-light py-4 text-responsive text-capitalize">
             <div className="text-center m-auto py-3">
-                <h2>showing results <spanc className='fw-semmibold'>{search.length - 1}</spanc></h2>
+                <h2>showing results :<spanc className='fw-semmibold'>{search.length}</spanc></h2>
             </div>
             <div className="d-flex mb-5 flex-wrap justify-content-around border border-3 shadow p-2 border-danger rounded ">
                 {search.slice(pre, next).map(item => {
 
                     return <Link className='text-dark curser-pointer w-fixed m-3 btn p-3 shadow border-bottom border-3 border-dark text-decoration-none' to={`/exercises/${item.id}`}>
                         <img src={item.gifUrl} className="img-fluid shadow rounded" alt="gif" />
-                        <i className="bi bi-bookmark-heart relative"></i>
                         <div className="d-flex mt-4 mb-2 flex-wrap  text-responsive">
                             <button className="m-2 btn p-1  text-capitalize m-auto rounded border px-3 border-2 border-dark bg-light">{item.bodyPart}</button>
                             <button className="btn m-auto my-2  text-capitalize rounded border border-2 px-3 p-1 border-dark bg-light">{item.target}</button>
@@ -40,7 +39,7 @@ export const Search = (props) => {
                             setpre(pre - n); setnext(next - n);
                         }} ><i className="bi bi-arrow-left"></i></button>}
                     </li>
-                    <li className='w-100 m-2 overflow-scroll justify-content-around d-flex'>
+                    <li className='w-100 m-2 overflow-scroll d-flex'>
                         {myList.map((item) => {
                             return <button className="page-link mx-1 curser-pointer rounded text-primary border-0 text-responsive" onClick={() => {
                                 setpre(item * n); setnext((item + 1) * n);
@@ -54,5 +53,5 @@ export const Search = (props) => {
                     </li>
                 </ul>
             </div>
-        </div>:<>No result found</>}</>)
+        </div>:<></>}</>)
 }

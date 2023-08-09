@@ -35,10 +35,14 @@ details summary {
 .width{
     padding: 12px;
 }
-.overflow-scroll{
-    overflow: scroll;
+
+.overflowx-hidden{
+    overflow-x: hidden !important;
 }
-.overflow-scroll::-webkit-scrollbar{
+.overflow-scroll{
+    overflow-x: scroll;
+}
+.overflow-scroll::-webkit-scrollbar,.overflow-scroll1::-webkit-scrollbar{
     display: none;
 }
 .absolute-filter{
@@ -47,7 +51,14 @@ details summary {
     margin-right: 100%;
     z-index: 2;
 }
-
+.relative{
+    position: relative!important;
+    font-size: 30px;
+    left: 90%;
+    margin: 20px auto;
+    cursor: pointer;
+    z-index: 2;
+}
 .loader{
     display: flex;
     justify-content: center;

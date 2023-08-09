@@ -36,7 +36,7 @@ const Equipment = () => {
                             setpre1(pre1 - 4); setnext1(next1 - 4);
                         }} ><i className="bi bi-arrow-left"></i></button>}
                     </li>
-                    <li className='w-50  m-2 overflow-scroll justify-content-center d-flex'>
+                    <li className='w-50  m-2 overflow-scroll d-flex'>
                         {myList.map((item) => {
                                 return <button className="page-link mx-1 curser-pointer rounded text-primary border-0 text-responsive" onClick={() => {
                                     setpre1(item * 4); setnext1((item + 1) * 4);

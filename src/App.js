@@ -26,6 +26,14 @@ const App = () => {
     await fetchingdata()
     setload(false)
   }, []);
+
+  useEffect(()=>{
+    const fetch=()=>{
+      localStorage.setItem('favourite',favourite)
+    }
+    fetch()
+  },[favourite])
+  
   return (
     <Router>
       <MyContext.Provider value={{ data,favourite,setfavourite }}>
