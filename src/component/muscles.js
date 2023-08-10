@@ -3,7 +3,7 @@ import Fetchdata from '../api/fetchdata';
 import { Search } from './search';
 import MyContext from '../api/context';
 const Muscles = () => {
-    const { data: { targetList } } = useContext(MyContext)
+    const { data: { targetList } ,toggleload} = useContext(MyContext)
 
     const [pre1, setpre1] = useState(0);
     const [next1, setnext1] = useState(4);
@@ -11,9 +11,12 @@ const Muscles = () => {
     const myList = Array.from({ length: targetList.length/4 +1 }, (_, index) => index);
 
     async function fetch(item) {
+        toggleload()
         const url = `https://exercisedb.p.rapidapi.com/exercises/target/${item}`;
         const data1 = await Fetchdata(url).catch((err) => { console.log(err) });
         setsearch(data1);
+        toggleload()
+
     }
 
     return (
@@ -38,7 +41,7 @@ const Muscles = () => {
                             setpre1(pre1 - 4); setnext1(next1 - 4);
                         }} ><i className="bi bi-arrow-left"></i></button>}
                     </li>
-                    <li className='w-50 m-2 overflow-scroll justify-content-center d-flex'>
+                    <li className=' m-auto overflow-scroll d-flex'>
                         {myList.map((item) => {
                                 return <button className="page-link mx-1 curser-pointer rounded text-primary border-0 text-responsive" onClick={() => {
                                     setpre1(item * 4); setnext1((item + 1) * 4);

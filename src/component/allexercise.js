@@ -3,22 +3,25 @@ import { Search } from './search';
 import MyContext from '../api/context';
 const Allexercise = () => {
     const [data, setdata] = useState([])
-    const { data: { allexercise }, data: { targetList }, data: { equipmentList }, data: { bodyPartList } } = useContext(MyContext)
+    const { data: { allexercise }, data: { targetList }, data: { equipmentList }, data: { bodyPartList } ,toggleload} = useContext(MyContext)
 
     useEffect(() => {
         const fetch = async () => {
+            toggleload()
             setdata(allexercise);
         }
         fetch();
+        toggleload()
     }, [])
 
     const filter = async (bodyPart, equipment, target) => {
+        toggleload()
         const searchdataall = await allexercise.filter((item) => {
             console.log(equipment.includes(item.equipment?.toLowerCase()) && target.includes(item.target?.toLowerCase()) && bodyPart.includes(item.bodyPart?.toLowerCase()))
             return (equipment.includes(item.equipment?.toLowerCase()) && target.includes(item.target?.toLowerCase()) && bodyPart.includes(item.bodyPart?.toLowerCase()))
         });
+        toggleload()
         setdata(searchdataall);
-        console.log(searchdataall)
     }
     return (
         <div className='container rounded text-responsive bg-light'>
@@ -55,7 +58,6 @@ const Allexercise = () => {
                         <details className='list-none border border-2 border-danger m-2  rounded p-2 bg-light'>
                             <summary className='border-bottom border-2 border-danger mb-2'><h5>according to bodyparts</h5></summary>
                             <div className="d-flex flex-column">
-
                                 {bodyPartList.map((item) => {
                                     return <div>
                                         <input className='btn curser-pointer mx-2 h5' type="checkbox" id='bodyparts' /><label className='h5' htmlFor="">{item}</label>

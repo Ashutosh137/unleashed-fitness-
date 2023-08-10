@@ -2,11 +2,12 @@ import React, { useContext, useState, useEffect } from 'react'
 import MyContext from '../api/context'
 import { Search } from './search'
 export const Favourite = () => {
-  const { favourite, setfavourite, data: { allexercise } } = useContext(MyContext)
+  const { favourite, setfavourite, data: { allexercise },toggleload } = useContext(MyContext)
   const [favouriteexercise, setfavouriteexercise] = useState([])
 
   useEffect(() => {
     const fetch = async () => {
+      toggleload()
       const data = await allexercise.filter((item) => {
         return favourite.includes(item.id);
       })
@@ -17,13 +18,12 @@ export const Favourite = () => {
       if(data!=null){
         setfavourite(data)
       }
-      console.log(data)
     }
     fetch()
     fetch1()
+    toggleload()
   }, [])
 
-  console.log(favourite, favouriteexercise)
   return (
     <div className='rounded'>{favouriteexercise[0] ? <Search exercise={favouriteexercise} n={favouriteexercise.length} /> : <h1 className='text-center text-capitalize bg-light p-5 text-suceess'>add favourite</h1>}
     </div>

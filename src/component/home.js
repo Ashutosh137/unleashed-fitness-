@@ -6,12 +6,13 @@ import MyContext from '../api/context';
 import { Search } from './search';
 
 const Home = () => {
+    const {load,toggleload}=useContext(MyContext)
     const [searchLowerCase, setsearch] = useState("")
     const [searchdata, setsearchdata] = useState([])
     const { data: { allexercise } } = useContext(MyContext)
-
     const handelsubmit = (e) => {
         e.preventDefault();
+        toggleload()
         const searchdata = allexercise.filter((item) => {
             return item.name?.toLowerCase() === searchLowerCase ||
                 item.bodyparts?.toLowerCase().includes(searchLowerCase) ||
@@ -21,10 +22,10 @@ const Home = () => {
 
         })
         setsearchdata(searchdata);
-
+        toggleload()
     }
     return (
-        <div className="container text-responsive my-5 rounded text-capitalize">
+        <div className="container text-responsive py-4 rounded text-capitalize">
             <div className="d-flex align-middle home">
                 <div className="m-auto main  d-flex w-50 h-50 rounded p-5 text-center">
                     <div className="m-auto box">
@@ -41,10 +42,10 @@ const Home = () => {
                 <form onSubmit={(e) => handelsubmit(e)} className='d-flex justify-content-center container'>
                     <input type="search" name='search' value={searchLowerCase} onChange={(e) => {
                         setsearch(e.target.value.toLowerCase())
-                    }} className='text-dark p-3 m-2  rounded w-100' placeholder='Search your exercise' />
+                    }} className='text-dark p-3 m-2 rounded w-100' placeholder='Search your exercise' />
                     <button type='submit' className='btn btn-danger m-2 fw-semibold'>Submit</button>
                 </form>
-                <div className="bg-light w-100">
+                <div className="bg-light rounded my-5 w-100">
                     {searchdata[0] && <div className="container">
                         <Search exercise={searchdata} n={2} />
                     </div>}

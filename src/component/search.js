@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import MyContext from '../api/context';
 
 export const Search = (props) => {
+    const { toggleload } = useContext(MyContext)
     const n = props.n;
     const [pre, setpre] = useState(0);
     const [next, setnext] = useState(n);
@@ -9,15 +11,17 @@ export const Search = (props) => {
     const [search, setsearch] = useState([]);
     const myList = Array.from({ length: search.length / n + 1 }, (_, index) => index);
 
-
     useEffect(() => {
+        toggleload()
         setsearch(data);
+        toggleload()
+
     }, [data])
 
     return (<>
         {search[0] ? <div className="container rounded bg-light py-4 text-responsive text-capitalize">
             <div className="text-center m-auto py-3">
-                <h2>showing results :<spanc className='fw-semmibold'>{search.length}</spanc></h2>
+                <h2 className='h5'>showing results : <spanc className='fw-semmibold'> {search.length}</spanc></h2>
             </div>
             <div className="d-flex mb-5 flex-wrap justify-content-around border border-3 shadow p-2 border-danger rounded ">
                 {search.slice(pre, next).map(item => {
@@ -39,7 +43,7 @@ export const Search = (props) => {
                             setpre(pre - n); setnext(next - n);
                         }} ><i className="bi bi-arrow-left"></i></button>}
                     </li>
-                    <li className='w-100 m-2 overflow-scroll d-flex'>
+                    <li className='m-2 m-auto overflow-scroll d-flex'>
                         {myList.map((item) => {
                             return <button className="page-link mx-1 curser-pointer rounded text-primary border-0 text-responsive" onClick={() => {
                                 setpre(item * n); setnext((item + 1) * n);
@@ -53,5 +57,5 @@ export const Search = (props) => {
                     </li>
                 </ul>
             </div>
-        </div>:<></>}</>)
+        </div> : <></>}</>)
 }

@@ -32,76 +32,115 @@
 details summary {
     list-style: none;
 }
-.width{
+
+.width {
     padding: 12px;
 }
 
-.overflowx-hidden{
+.overflowx-hidden {
     overflow-x: hidden !important;
 }
-.overflow-scroll{
+
+.overflow-scroll {
     overflow-x: scroll;
 }
-.overflow-scroll::-webkit-scrollbar,.overflow-scroll1::-webkit-scrollbar{
+
+.overflow-scroll::-webkit-scrollbar,
+.overflow-scroll1::-webkit-scrollbar {
     display: none;
 }
-.absolute-filter{
+
+.absolute-filter {
     position: relative;
     margin-top: 70px;
     margin-right: 100%;
     z-index: 2;
 }
-.relative{
-    position: relative!important;
+
+.spinner {
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    width: 20%;
+    z-index: 3;
+    background: rgb(0, 0, 0, 0.7);
+}
+
+.spinner img {
+    /* filter: brightness(0); */
+    border-radius: 100%;
+    border: 3px solid black;
+    padding: 5px;
+}
+
+.relative {
+    position: relative !important;
     font-size: 30px;
     left: 90%;
     margin: 20px auto;
     cursor: pointer;
     z-index: 2;
 }
+
 .loader{
     display: flex;
     justify-content: center;
     align-items: center;
     background: #000;
-    width: 100%;
+    width: 100vw;
     flex-direction: column;
-    height:100vh;
+    height: 100vh;
     padding: 20px;
     color: aliceblue;
     font-size: xx-large;
+    aspect-ratio: 1/1;
+}
+.loader img{
+    width: 40%;
 }
 
-.text-responsive>p,button{
-        font-size: large;
-        background: white;
-  }
-.w-fixed{
-    width:350px ;
-    margin:auto;
-  }
+.text-responsive >
+button ,input{
+    font-size: large;
+    background: white;
+}
+
+.w-fixed {
+    width: 350px;
+    margin: auto;
+}
 
 @media (max-width:650px) {
-    .text-responsive>label,button{
+
+    .text-responsive label,
+    button,input {
         font-size: 8px;
         text-transform: capitalize;
         padding: 1px;
     }
-    .w-fixed{
+
+    .w-fixed {
         width: 250px;
     }
-    .text-responsive h5,h2,h1,h4{
+
+    .text-responsive h5,
+    h2,
+    h1,
+    h4 {
         font-size: medium;
     }
-    .text-responsive .text-sm{
+
+    .text-responsive .text-sm {
         font-size: smaller;
         width: 5rem;
         padding: 1px;
-  }
+    }
+
     .home .main .box {
         font-size: larger;
         margin: 0%;
     }
+
     .home .main .box h2 {
         font-size: large;
     }
@@ -114,16 +153,22 @@ details summary {
         margin: 0%;
     }
 }
+
 @media (max-width:350px) {
-    .text-responsive{
+    .text-responsive {
         font-size: xx-small;
     }
-    .text-responsive h5,h2,h1,h4{
+
+    .text-responsive h5,
+    h2,
+    h1,
+    h4 {
         font-size: medium;
     }
-    .text-responsive label{
+
+    .text-responsive label {
         text-align: center;
         font-size: 12px;
     }
-    
+
 }

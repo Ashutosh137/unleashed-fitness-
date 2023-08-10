@@ -8,32 +8,31 @@ const Exercise = () => {
     if (!id) {
         id = "0007";
     };
-    const { data: { allexercise }, favourite, setfavourite } = useContext(MyContext)
+    const { data: { allexercise }, favourite, setfavourite,toggleload } = useContext(MyContext)
     const [exercise, setexercise] = useState([]);
     const [similar_target, setsimilar_target] = useState([]);
     const [similar_equipment, setsimilar_equipment] = useState([]);
 
     useEffect(() => {
         const fetch = async () => {
+            toggleload()
             const exercisedata = await allexercise.filter((item) => {
                 return item.id === id
             });
             setexercise(exercisedata[0])
-
-            const similar_equipment = await allexercise.filter((item) => {
+            const similar_equipment1 = await allexercise.filter((item) => {
                 return item.equipment === exercise.equipment
             });
-            const similar_target = await allexercise.filter((item) => {
+            const similar_target1 = await allexercise.filter((item) => {
                 return item.target === exercise.target
             });
-            setsimilar_equipment(similar_equipment)
-            setsimilar_target(similar_target)
+            await setsimilar_equipment(similar_equipment1)
+            await setsimilar_target(similar_target1)
         }
         fetch();
+        toggleload()
+
     }, [id])
-
-    console.log(favourite)
-
     return (
         <div className="container text-responsive rounded py-5 bg-light text-capitalize m-auto">
             <div className="text-center h3 py-3">
