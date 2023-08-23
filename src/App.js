@@ -41,13 +41,16 @@ const App = () => {
     }
     fetch()
   }, [favourite])
+
+
   const toggleload = () => {
     setload(prevLoad => !prevLoad);
   }
+
   return (
     <Router>
       <MyContext.Provider value={{ data, favourite, setfavourite, load, toggleload }}>
-        {load1 ? <div className="loader"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/db4c8d09-e9cf-457e-bf26-81f68fd8c9c8/dbxggo5-bc363337-2b7d-479c-9641-3d0f801815cd.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RiNGM4ZDA5LWU5Y2YtNDU3ZS1iZjI2LTgxZjY4ZmQ4YzljOFwvZGJ4Z2dvNS1iYzM2MzMzNy0yYjdkLTQ3OWMtOTY0MS0zZDBmODAxODE1Y2QuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.xvK65ukDA9Hw4zCKUP3o18rhvgRXtu0kcl8F2VRSGb4" /><label htmlFor="">Loading...</label></div> :
+        {!load1 ? <div className="loader"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/db4c8d09-e9cf-457e-bf26-81f68fd8c9c8/dbxggo5-bc363337-2b7d-479c-9641-3d0f801815cd.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RiNGM4ZDA5LWU5Y2YtNDU3ZS1iZjI2LTgxZjY4ZmQ4YzljOFwvZGJ4Z2dvNS1iYzM2MzMzNy0yYjdkLTQ3OWMtOTY0MS0zZDBmODAxODE1Y2QuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.xvK65ukDA9Hw4zCKUP3o18rhvgRXtu0kcl8F2VRSGb4" /><label htmlFor="">Loading...</label></div> :
           <div className="bg">
             <Navbar />
             {
