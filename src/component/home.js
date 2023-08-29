@@ -6,7 +6,7 @@ import MyContext from '../api/context';
 import { Search } from './search';
 
 const Home = () => {
-    const {load,toggleload}=useContext(MyContext)
+    const { toggleload } = useContext(MyContext)
     const [searchLowerCase, setsearch] = useState("")
     const [searchdata, setsearchdata] = useState([])
     const { data: { allexercise } } = useContext(MyContext)
@@ -27,7 +27,7 @@ const Home = () => {
     return (
         <div className="container text-responsive py-4 rounded text-capitalize">
             <div className="d-flex align-middle home">
-                <div className="m-auto main  d-flex w-50 h-50 rounded p-5 text-center">
+                <div className="m-auto main d-flex w-50 h-50 rounded p-5 text-center">
                     <div className="m-auto box">
                         <h1>sweet ,smile and repeat </h1><p>Train with Passion, Achieve Greatness</p>
                         <button className='btn btn-danger m-2 text-capitalize'><a href="#main" className='text-decoration-none text-light'>get started</a></button>
@@ -35,10 +35,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className="my-5 m-3">
-                <h1 className='text-center h2 my-5'>awesome exercises you should know</h1>
-            </div>
-            <div className="container">
+            <div className="my-4 py-2">
+                <h1 className='text-center h2 my-4'>awesome exercises you should know</h1>
                 <form onSubmit={(e) => handelsubmit(e)} className='d-flex justify-content-center container'>
                     <input type="search" name='search' value={searchLowerCase} onChange={(e) => {
                         setsearch(e.target.value.toLowerCase())
@@ -51,16 +49,17 @@ const Home = () => {
                     </div>}
                 </div>
             </div>
+
             <div id='main' className="container">
-                <div className="my-3">
+                <div className="my-4">
                     <h3 className=' h2 m-auto my-4 border-2 border-bottom border-dark p-2'>search by bodyparts</h3>
                     <Bodyparts />
                 </div>
-                <div className="my-3">
+                <div className="my-4">
                     <h3 className=' h2 m-auto my-4 border-2 border-bottom border-dark p-2'>search by target muscles</h3>
                     <Muscles />
                 </div>
-                <div className="my-3">
+                <div className="my-4">
                     <h3 className=' h2 m-auto my-4 border-2 border-bottom border-dark p-2'>search by equipment</h3>
                     <Equipment />
                 </div>

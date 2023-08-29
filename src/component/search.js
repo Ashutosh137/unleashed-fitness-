@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import MyContext from '../api/context';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 export const Search = (props) => {
     const { toggleload } = useContext(MyContext)
     const n = props.n;
     const [pre, setpre] = useState(0);
     const [next, setnext] = useState(n);
+    const [skeleton, setskeleton] = useState(true)
     const data = props.exercise;
     const [search, setsearch] = useState([]);
     const myList = Array.from({ length: search.length / n + 1 }, (_, index) => index);
@@ -21,13 +24,17 @@ export const Search = (props) => {
     return (<>
         {search[0] ? <div className="container rounded bg-light py-4 text-responsive text-capitalize">
             <div className="text-center m-auto py-3">
-                <h2 className='h5'>showing results : <spanc className='fw-semmibold'> {search.length}</spanc></h2>
+                <h2 className='h5'>showing results : <span className='fw-semmibold'> {search.length}</span></h2>
             </div>
             <div className="d-flex mb-5 flex-wrap justify-content-around border border-3 shadow p-2 border-danger rounded ">
-                {search.slice(pre, next).map(item => {
+                {search.slice(pre, next).map((item, index) => {
 
-                    return <Link className='text-dark curser-pointer w-fixed m-3 btn p-3 shadow border-bottom border-3 border-dark text-decoration-none' to={`/exercises/${item.id}`}>
-                        <img src={item.gifUrl} className="img-fluid shadow rounded" alt="gif" />
+                    return <Link key={index} className='text-dark curser-pointer w-fixed m-3 btn p-3 shadow border-bottom border-3 border-dark text-decoration-none' to={`/exercises/${item.id}`}>
+                        {skeleton && <Skeleton count={10}/>}
+                        <img style={{ display: skeleton ? 'none' : 'block' }} onLoadCapture={() => {
+                            setskeleton(false)
+                        }}
+                            src={item.gifUrl} className="img-fluid shadow rounded" alt="gif" />
                         <div className="d-flex mt-4 mb-2 flex-wrap  text-responsive">
                             <button className="m-2 btn p-1  text-capitalize m-auto rounded border px-3 border-2 border-dark bg-light">{item.bodyPart}</button>
                             <button className="btn m-auto my-2  text-capitalize rounded border border-2 px-3 p-1 border-dark bg-light">{item.target}</button>
@@ -44,8 +51,8 @@ export const Search = (props) => {
                         }} ><i className="bi bi-arrow-left"></i></button>}
                     </li>
                     <li className='m-2 m-auto overflow-scroll d-flex'>
-                        {myList.map((item) => {
-                            return <button className="page-link mx-1 curser-pointer rounded text-primary border-0 text-responsive" onClick={() => {
+                        {myList.map((item, index) => {
+                            return <button key={index} className="page-link mx-1 curser-pointer rounded text-primary border-0 text-responsive" onClick={() => {
                                 setpre(item * n); setnext((item + 1) * n);
                             }}>{item + 1}</button>
                         })}

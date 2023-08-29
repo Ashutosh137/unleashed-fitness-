@@ -3,7 +3,7 @@
     background-repeat: no-repeat;
     height: 80vh;
     animation: opoacity 0.9s ease-in-out;
-    border-radius: 100px 10px;
+    border-radius: 60px 10px;
     box-shadow: 0px 0px 15px 5px rgb(255, 255, 255);
 }
 
@@ -16,7 +16,13 @@
 }
 
 .home .main:hover {
-    background-color: rgb(255, 255, 255, 0.9);
+    transform: scale(1.1);
+    transition: all 0.4s ease;
+}
+
+.home .main:not(:hover) {
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
 }
 
 .home .main .box {
@@ -67,7 +73,6 @@ details summary {
 }
 
 .spinner img {
-    /* filter: brightness(0); */
     border-radius: 100%;
     border: 3px solid black;
     padding: 5px;
@@ -82,7 +87,7 @@ details summary {
     z-index: 2;
 }
 
-.loader{
+.loader {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,12 +100,13 @@ details summary {
     font-size: xx-large;
     aspect-ratio: 1/1;
 }
-.loader img{
+
+.loader img {
     width: 40%;
 }
 
-.text-responsive >
-button ,input{
+.text-responsive>button,
+input {
     font-size: large;
     background: white;
 }
@@ -113,7 +119,8 @@ button ,input{
 @media (max-width:650px) {
 
     .text-responsive label,
-    button,input {
+    button,
+    input {
         font-size: 8px;
         text-transform: capitalize;
         padding: 1px;

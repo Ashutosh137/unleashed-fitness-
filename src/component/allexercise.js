@@ -3,7 +3,7 @@ import { Search } from './search';
 import MyContext from '../api/context';
 const Allexercise = () => {
     const [data, setdata] = useState([])
-    const { data: { allexercise }, data: { targetList }, data: { equipmentList }, data: { bodyPartList } ,toggleload} = useContext(MyContext)
+    const { data: { allexercise }, data: { targetList }, data: { equipmentList }, data: { bodyPartList }, toggleload } = useContext(MyContext)
 
     useEffect(() => {
         const fetch = async () => {
@@ -25,15 +25,13 @@ const Allexercise = () => {
     }
     return (
         <div className='container rounded text-responsive bg-light'>
-            <h4 className='text-center text-capitalize bg-light p-5 text-suceess'>all exercise</h4>
-            <button className="btn btn-primary text-capitalize" type="button" data-bs-toggle="offcanvas" data-bs-target="#filter">
+            <h4 className='text-center text-capitalize bg-light border-bottom border-1 border-dark p-4 my-5 h1 text-suceess'>all exercise</h4>
+            <button className="btn btn-primary text-dark text-capitalize" type="button" data-bs-toggle="offcanvas" data-bs-target="#filter">
                 fliter exercise
             </button>
-            <div className="">
-                <div className='w-100'>
-                    <div className=" p-5">
-                        {data[0] ? <Search exercise={data} n={6} /> : <h1 className='text-center text-capitalize bg-light p-5 text-suceess'>no result found</h1>}
-                    </div>
+            <div className='w-100'>
+                <div className=" p-5">
+                    {data[0] ? <Search exercise={data} n={6} /> : <h1 className='text-center text-capitalize bg-light p-5 text-suceess'>no result found</h1>}
                 </div>
             </div>
 
@@ -52,14 +50,13 @@ const Allexercise = () => {
                         const equipmentlabels = Array.from(equipment).map((checkbox) => checkbox.nextElementSibling.innerText.toLowerCase());
                         const targetlabels = Array.from(target).map((checkbox) => checkbox.nextElementSibling.innerText.toLowerCase());
                         filter(bodyPartlabels, equipmentlabels, targetlabels);
-                        console.log(bodyPartlabels, equipmentlabels, targetlabels)
                     }}>
                         <h3 className='text-center my-3'>filter</h3>
                         <details className='list-none border border-2 border-danger m-2  rounded p-2 bg-light'>
                             <summary className='border-bottom border-2 border-danger mb-2'><h5>according to bodyparts</h5></summary>
                             <div className="d-flex flex-column">
-                                {bodyPartList.map((item) => {
-                                    return <div>
+                                {bodyPartList.map((item ,index) => {
+                                    return <div key={index}>
                                         <input className='btn curser-pointer mx-2 h5' type="checkbox" id='bodyparts' /><label className='h5' htmlFor="">{item}</label>
                                     </div>
                                 })}</div>
@@ -67,8 +64,8 @@ const Allexercise = () => {
                         <details className='list-none border border-2 m-2 border-danger rounded p-2 bg-light'>
                             <summary className='border-bottom border-2 border-danger mb-2'><h5>according to equipment</h5></summary>
                             <div className="d-flex flex-column">
-                                {equipmentList.map((item) => {
-                                    return <div>
+                                {equipmentList.map((item,index) => {
+                                    return <div key={index}>
                                         <input className='btn curser-pointer mx-2 h5' type="checkbox" id='equipment' /><label className='h5' htmlFor="">{item}</label>
                                     </div>
                                 })}</div>
@@ -78,14 +75,14 @@ const Allexercise = () => {
 
                             <div className="d-flex flex-column">
 
-                                {targetList.map((item) => {
-                                    return <div>
+                                {targetList.map((item,index) => {
+                                    return <div key={index}>
                                         <input className='btn curser-pointer mx-2 h5' type="checkbox" id='target' /><label className='h5' htmlFor="">{item}</label>
                                     </div>
                                 })}</div>
                         </details>
                         <div className="d-flex justify-content-center my-3 curser-pointer">
-                            <button type='reset' className='btn mx-1 text-capitalize fw-semibold  btn-danger'  data-bs-dismiss="offcanvas" onClick={()=>{
+                            <button type='reset' className='btn mx-1 text-capitalize fw-semibold  btn-danger' data-bs-dismiss="offcanvas" onClick={() => {
                                 setdata(allexercise)
                             }}>reset</button>
                             <button className='btn mx-1 text-capitalize fw-semibold  btn-danger' data-bs-dismiss="offcanvas">submit</button>
@@ -97,4 +94,4 @@ const Allexercise = () => {
         </div>
     )
 }
-export default Allexercise
+export default Allexercise;

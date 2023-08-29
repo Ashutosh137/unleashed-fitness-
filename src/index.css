@@ -7,15 +7,19 @@
 .bg {
     background-repeat: no-repeat;
     background-size: cover;
-    animation:opoacity 0.5s  ease;
-    background: linear-gradient(90deg, hsla(280, 95%, 57%, 1) 0%, hsla(193, 90%, 55%) 100%);
+    animation: opoacity 0.8s ease;
+    background: #BBD2C5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(12deg, #292E49, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(290deg, #1b2043, #536976, #7d6f52); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
 @keyframes opoacity {
-    0%{
+    0% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
-    
+
 }

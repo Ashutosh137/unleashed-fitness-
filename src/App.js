@@ -36,11 +36,11 @@ const App = () => {
         localStorage.setItem('favourite', JSON.stringify(favourite))
       }
       else {
-        localStorage.setItem('favourite', JSON.stringify(data))
+        setfavourite(JSON.parse(data))
       }
     }
     fetch()
-  }, [favourite])
+  }, [])
 
 
   const toggleload = () => {
