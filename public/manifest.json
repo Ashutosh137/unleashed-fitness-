@@ -1,15 +1,16 @@
 {
-  "short_name": "hospital App",
-  "name": "Create React App Sample",
+  "short_name": "gym trainer webapp",
+  "name": "gym trainer ",
   "icons": [
     {
       "src": "New-folder/about-frame-img.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x512"
     }
   ],
   "start_url": ".",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#000000",
+  "prefer_related_applications":false,
   "background_color": "#ffffff"
 }
