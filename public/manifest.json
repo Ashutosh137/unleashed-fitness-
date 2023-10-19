@@ -1,7 +1,11 @@
 {
   "short_name": "gym trainer webapp",
   "name": "gym trainer ",
-  "icons": [
+  "icons": [    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
     {
       "src": "New-folder/about-frame-img.png",
       "type": "image/png",
