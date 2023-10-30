@@ -120,7 +120,7 @@ input {
     .text-responsive label,
     button,
     input {
-        font-size: 8px;
+        font-size: 4px;
         text-transform: capitalize;
         padding: 1px;
     }
