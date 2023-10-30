@@ -16,8 +16,10 @@ const Allexercise = () => {
 
     const filter = async (bodyPart, equipment, target) => {
         toggleload()
+        bodyPart=!bodyPart[0]? bodyPartList:bodyPart
+        equipment=!equipment[0]? equipmentList:equipment
+        target=!target[0]? targetList:target
         const searchdataall = await allexercise.filter((item) => {
-            console.log(equipment.includes(item.equipment?.toLowerCase()) && target.includes(item.target?.toLowerCase()) && bodyPart.includes(item.bodyPart?.toLowerCase()))
             return (equipment.includes(item.equipment?.toLowerCase()) && target.includes(item.target?.toLowerCase()) && bodyPart.includes(item.bodyPart?.toLowerCase()))
         });
         toggleload()

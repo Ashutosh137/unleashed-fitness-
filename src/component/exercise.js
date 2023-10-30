@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useLayoutEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Search } from './search';
 import MyContext from '../api/context';
@@ -11,6 +11,10 @@ const Exercise = () => {
     const [similar_target, setsimilar_target] = useState([]);
     const [similar_equipment, setsimilar_equipment] = useState([]);
     const [skeleton, setskeleton] = useState(true)
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
 
     useEffect(() => {
         const fetchExerciseData = async () => {
@@ -36,33 +40,23 @@ const Exercise = () => {
 
 
     return (
-        <div className="container p-5 text-responsive rounded py-5 bg-light text-capitalize m-auto">
+        <div className="container mx-2 p-5 text-responsive rounded py-5 bg-light text-capitalize m-auto">
             <div className="text-center h3 py-3">
                 <h3 className='h4 fw-bold border-bottom border-1  border-dark py-3'>{exercise.name}</h3>
             </div>
 
-            <div className="d-flex flex-wrap justify-content-center">
-                <div className="w-50 px-3">
+            <div className="d-flex felx justify-content-center">
+                <div className=" felx-1 py-5 rounded">
                     {skeleton && <Skeleton count={10} />}
                     <img style={{ display: skeleton ? 'none' : 'block' }} onLoadCapture={() => {
                         setskeleton(false)
                     }}
                         src={exercise.gifUrl} className="img-fluid shadow-1 m-auto rounded" alt="gif" />
                 </div>
-                <div className="w-50 px-4 ">
-                    <h2 className=' fw-bold'>{exercise.name || <Skeleton />}</h2>
+                <div className="m-auto felx-1 px-4 text-res">
+                    <p className='text-center '>exercise keep you strong and increase muscles in <b>{exercise.target || <Skeleton />}</b> ,this is one of the best exercise to target your <b>{exercise.bodyPart || <Skeleton />}</b> using <b>{exercise.equipment || <Skeleton />}</b> <br />
+                     it will help you to improve your mood and energy </p>
 
-                    <p className=" mx-1 ">exercise keep you strong , {exercise.name || <Skeleton />} is one of the best exercise to target your {exercise.bodyPart} it will help you to improve your mood and energy </p>
-                    <div className="d-flex">
-                        <h5 className='mx-1'>target:</h5>
-                        <label className=' mx-1'>{exercise.target || <Skeleton />}</label>
-                    </div>
-                    <div className="d-flex">
-                        <h5 className='mx-1'>muscles:</h5>
-                        <label className=' mx-1  '>{exercise.bodyPart || <Skeleton />}</label></div>
-                    <div className="d-flex">
-                        <h5 className='mx-1'>equipment used:</h5>
-                        <label className='mx-1 '>{exercise.equipment || <Skeleton />}</label></div>
                 </div>
             </div>
             {favourite.includes(id) ? <i className="bi bi-bookmark-heart-fill relative" onClick={() => {
@@ -73,9 +67,9 @@ const Exercise = () => {
             }}></i>}
 
             <div className='container mt-5'>
-                <h1 className=' m-3 border-2 border-bottom border-danger'>similar target muscles exercise</h1>
+                <h1 className=' m-3 h3 border-2 border-bottom border-danger'>similar target muscles exercise</h1>
                 <Search exercise={similar_target} n={2} />
-                <h1 className='m-3 border-2 border-bottom border-danger'>similar equipments exercise</h1>
+                <h1 className='m-3 h3 border-2 border-bottom border-danger'>similar equipments exercise</h1>
                 <Search exercise={similar_equipment} n={2} />
             </div>
         </div>

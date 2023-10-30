@@ -22,9 +22,6 @@ const Equipment = () => {
 
     return (
         <div className='m-auto bg-light rounded'>
-            <div className="text-center">
-                {search[1] ? <> <h2>showing results</h2></> : <></>}
-            </div>
             <div className="d-flex justify-content-center flex-wrap p-3" >
                 {equipmentList.slice(pre1, next1).map((item, index) => {
                     return <div key={index} className="w-25 my-4 card border-2 p-2" >

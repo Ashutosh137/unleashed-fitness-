@@ -1,17 +1,13 @@
 {
-  "short_name": "gym trainer webapp",
-  "name": "gym trainer ",
+  "short_name": "Unleashed Fitness",
+  "name": "Unleashed Fitness",
   "icons": [    {
-      "src": "logo192.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "192x192"
-    },
-    {
-      "src": "New-folder/about-frame-img.png",
-      "type": "image/png",
-      "sizes": "192x512"
     }
   ],
+  "description": "A Unleashed Fitness React web application for training 1328 different exercises.",
   "start_url": ".",
   "display": "fullscreen",
   "theme_color": "#000000",

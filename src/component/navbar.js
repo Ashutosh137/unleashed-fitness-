@@ -5,7 +5,7 @@ const Navbar = () => {
         <div>
             <nav className="navbar py-3 navbar-expand-lg text-capitalize text-white">
                 <div className="container-fluid">
-                    <Link to='/' className="navbar-brand text-center fw-bold h1">gym trainer</Link>
+                    <label className='title' htmlFor=""><Link to='/' className="navbar-brand text-center fw-bold h1">Unleashed Fitness</Link></label>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
