@@ -162,7 +162,7 @@ input {
 
 @media (max-width:350px) {
     .text-responsive {
-        font-size: xx-small;
+        font-size: 20px;
     }
 
     .text-responsive h5,
