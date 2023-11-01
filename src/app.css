@@ -1,7 +1,7 @@
 .home {
     background: url('https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1nfGVufDB8fDB8fA%3D%3D&w=1000&q=80') center center/cover;
     background-repeat: no-repeat;
-    height: 60vh;
+    height: 80vh;
     animation: opoacity 0.9s ease-in-out;
     border-radius: 60px 10px;
     box-shadow: 0px 0px 12px 2px rgb(255, 255, 255, 0.7);
@@ -73,17 +73,26 @@ details summary {
 }
 
 .title{
-    font-weight: 100;
-    font-size: xx-large;
+    font-weight: 700;
+    font-size: larger;
+    margin-left: 20px;
     font-family:sans-serif;
 }
 .title::first-letter{
-    font-size: xx-large;
+    font-size: 200%;
     font-weight: 700;
     font-style:italic;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.navbar h4:hover{
+    color: whitesmoke;
+    border-bottom: 3px solid wheat;
+    transform: scale(1.1);
+    transition: all linear 0.5s;
+    padding-left:2px ;
+    padding-right:5px ;
+}
 
 .relative {
     position: relative !important;
@@ -124,13 +133,17 @@ input {
 
 @media (max-width:650px) {
     .title{
-    
-    font-size: xx-large:
+    font-size: x-large;
 }
+
 .title::first-letter{
     font-size: xx-large;
 }
-
+.navbar h4{
+    font-size: 20px;
+    margin: auto;
+    width: 50%;
+}
     .text-responsive label,
     button {
         font-size: 100px;
