@@ -123,6 +123,13 @@ input {
 }
 
 @media (max-width:650px) {
+    .title{
+    
+    font-size: xx-large:
+}
+.title::first-letter{
+    font-size: xx-large;
+}
 
     .text-responsive label,
     button {
