@@ -26,9 +26,9 @@ const Allexercise = () => {
         setdata(searchdataall);
     }
     return (
-        <div className='container rounded text-responsive bg-light'>
-            <h4 className='text-center text-capitalize bg-light border-bottom border-1 border-dark p-4 my-5 h1 text-suceess'>all exercise</h4>
-            <button className="btn btn-primary text-dark text-capitalize" type="button" data-bs-toggle="offcanvas" data-bs-target="#filter">
+        <div className='mx-5 rounded text-responsive d-flex flex-column bg-light'>
+            <h4 className='text-center text-capitalize mx-5 bg-light border-bottom border-1 border-dark p-4 m-5 h1 text-suceess'>all exercise</h4>
+            <button className="px-3 btn-primary text-dark w-25 m-auto text-capitalize" type="button" data-bs-toggle="offcanvas" data-bs-target="#filter">
                 fliter exercise
             </button>
             <div className='w-100'>

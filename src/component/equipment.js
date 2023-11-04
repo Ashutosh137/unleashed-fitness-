@@ -10,7 +10,8 @@ const Equipment = () => {
     const [pre1, setpre1] = useState(0);
     const [next1, setnext1] = useState(4);
     const [search, setsearch] = useState([]);
-    const myList = Array.from({ length: (equipmentList.length / 4) }, (_, index) => index);
+    const slider=equipmentList.length % 4 === 0 ?equipmentList.length /4 : equipmentList.length/4 +1;
+    const myList = Array.from({ length:slider}, (_, index) => index);
     async function fetch(item) {
         toggleload()
         const url = `https://exercisedb.p.rapidapi.com/exercises/equipment/${item}`;

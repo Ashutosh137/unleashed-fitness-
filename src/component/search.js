@@ -12,14 +12,19 @@ export const Search = (props) => {
     const [skeleton, setskeleton] = useState(true)
     const data = props.exercise;
     const [search, setsearch] = useState([]);
-    const myList = Array.from({ length: search.length / n + 1 }, (_, index) => index);
+    const slider=search.length % n === 0 ?search.length /n : search.length/n +1;
+    const myList = Array.from({ length:slider}, (_, index) => index);
 
     useEffect(() => {
         toggleload()
         setsearch(data);
+        setpre(0);
+        setnext(n)
         toggleload()
 
     }, [data])
+
+
 
     return (<>
         {search[0] ? <div className="container rounded bg-light py-4 text-responsive text-capitalize">
@@ -29,17 +34,17 @@ export const Search = (props) => {
             <div className="d-flex mb-5 flex-wrap justify-content-around border border-3 shadow p-2 border-danger rounded ">
                 {search.slice(pre, next).map((item, index) => {
 
-                    return <Link key={index} className='text-dark curser-pointer w-fixed m-3 btn p-3 shadow border-bottom border-3 border-dark text-decoration-none' to={`/exercises/${item.id}`}>
+                    return <Link key={index} className='text-dark bg-wheat  curser-pointer w-fixed m-3 btn p-3 shadow border-bottom border-3 border-dark text-decoration-none' to={`/exercises/${item.id}`}>
                         {skeleton && <Skeleton count={10}/>}
                         <img style={{ display: skeleton ? 'none' : 'block' }} onLoadCapture={() => {
                             setskeleton(false)
                         }}
-                            src={item.gifUrl} className="img-fluid shadow rounded" alt="gif" />
+                            src={item.gifUrl} className="img-fluid rounded" alt="gif" />
                         <div className="d-flex mt-4 mb-2 flex-wrap  text-responsive">
                             <button className="m-2 btn p-1  text-capitalize m-auto rounded border px-3 border-2 border-dark bg-light">{item.bodyPart}</button>
                             <button className="btn m-auto my-2  text-capitalize rounded border border-2 px-3 p-1 border-dark bg-light">{item.target}</button>
                         </div>
-                        <button className="btn text-capitalize text-center btn-secondary rounded p-2 m-auto h5">{item.name}</button>
+                        <button className="my-3 text-capitalize text-center bg-custum rounded p-2 m-auto h5">{item.name}</button>
                     </Link>
                 })}
             </div>

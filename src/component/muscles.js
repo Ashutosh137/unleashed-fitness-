@@ -10,7 +10,8 @@ const Muscles = () => {
     const [pre1, setpre1] = useState(0);
     const [next1, setnext1] = useState(4);
     const [search, setsearch] = useState([]);
-    const myList = Array.from({ length: targetList.length/4 +1 }, (_, index) => index);
+    const slider=targetList.length % 4 === 0 ?targetList.length /4 : targetList.length/4 +1;
+    const myList = Array.from({ length:slider}, (_, index) => index);
 
     async function fetch(item) {
         toggleload()

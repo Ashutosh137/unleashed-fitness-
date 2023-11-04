@@ -20,9 +20,13 @@
     transition: all 0.4s ease;
 }
 
-.home .main:not(:hover) {
+.home .main:not(:hover),.navbar h4:not(:hover) {
     transform: scale(1);
     transition: all 0.3s ease-in-out;
+}
+.w-sm-50{
+    width: 30%;
+    font-size: larger;
 }
 
 .home .main .box {
@@ -86,14 +90,28 @@ details summary {
 }
 
 .navbar h4:hover{
-    color: whitesmoke;
-    border-bottom: 3px solid wheat;
+    color:rgba(0, 0, 0, 0.8);
+    border-bottom: 3px solid rgb(73, 73, 72);
     transform: scale(1.1);
-    transition: all linear 0.5s;
-    padding-left:2px ;
-    padding-right:5px ;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all ease 0.2s;
+}
+.bg-custum{
+    color: rgba(0, 0, 0, 0.8);
+    background: #f12711;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
+background:linear-gradient(to right, rgb(235, 177, 69),rgb(241, 166, 68), rgb(253, 143, 0));/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    width: 200px;
 }
 
+    
+   
+    
+
+.bg-wheat{
+    background-color: white;
+}
 .relative {
     position: relative !important;
     font-size: 30px;
@@ -162,6 +180,10 @@ input {
 
     .text-res label {
         font-size: large;
+    }
+    .w-sm-50{
+        width: 100%;
+        font-size: medium;
     }
 
     .w-fixed {

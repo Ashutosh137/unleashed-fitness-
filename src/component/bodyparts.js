@@ -10,7 +10,9 @@ const Bodyparts = () => {
     const [next1, setnext1] = useState(4);
     const [search, setsearch] = useState([]);
 
-    const myList = Array.from({ length: bodyPartList.length / 4 + 1 }, (_, index) => index);
+    const slider=bodyPartList.length % 4 ===0 ?bodyPartList.length /4 : bodyPartList.length/4 +1
+
+    const myList = Array.from({ length: slider}, (_, index) => index);
 
     async function fetch(item) {
         toggleload()

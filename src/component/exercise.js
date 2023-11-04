@@ -40,7 +40,7 @@ const Exercise = () => {
 
 
     return (
-        <div className="container mx-2 p-5 text-responsive rounded py-5 bg-light text-capitalize m-auto">
+        <div className="mx-5  p-5 text-responsive rounded py-5 bg-light text-capitalize m-auto">
             <div className="text-center h3 py-3">
                 <h3 className='h4 fw-bold border-bottom border-1  border-dark py-3'>{exercise.name}</h3>
             </div>
@@ -53,7 +53,7 @@ const Exercise = () => {
                     }}
                         src={exercise.gifUrl} className="img-fluid shadow-1 m-auto rounded" alt="gif" />
                 </div>
-                <div className="m-auto felx-1 px-4 text-res">
+                <div className="m-auto  w-sm-50 felx-1 px-4 text-res">
                     <p className='text-center '>exercise keep you strong and increase muscles in <b>{exercise.target || <Skeleton />}</b> ,this is one of the best exercise to target your <b>{exercise.bodyPart || <Skeleton />}</b> using <b>{exercise.equipment || <Skeleton />}</b> <br />
                      it will help you to improve your mood and energy </p>
 
