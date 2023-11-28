@@ -89,6 +89,12 @@ details summary {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.img-fluid{
+    width: 130px;
+    margin: auto;
+
+}
+
 .navbar h4:hover{
     color:rgba(0, 0, 0, 0.8);
     border-bottom: 3px solid rgb(73, 73, 72);

@@ -27,7 +27,7 @@ const Muscles = () => {
             <div className="d-flex justify-content-center flex-wrap p-3 " >
                 {targetList.slice(pre1, next1).map((item, index) => {
                     return <div key={index} className="w-25 my-4 card border-2 p-2" >
-                        <img className='img-fluid mb-3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyMyQqOKCPUxwvCBKi_WXiiNSnPhJmgoqRDQ&usqp=CAU" alt="" />
+                        <img className='img-fluid  mb-3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyMyQqOKCPUxwvCBKi_WXiiNSnPhJmgoqRDQ&usqp=CAU" alt="" />
                         <button onClick={() => { fetch(item) }} className="text-responsive text-center text-capitalize p-1 border-1 border-danger border">{item||<Skeleton />}</button>
                     </div>
 
