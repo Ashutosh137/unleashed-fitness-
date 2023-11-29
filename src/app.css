@@ -1,7 +1,7 @@
 .home {
     background: url('https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1nfGVufDB8fDB8fA%3D%3D&w=1000&q=80') center center/cover;
     background-repeat: no-repeat;
-    height: 80vh;
+    height: 700px;
     animation: opoacity 0.9s ease-in-out;
     border-radius: 60px 10px;
     box-shadow: 0px 0px 12px 2px rgb(255, 255, 255, 0.7);
