@@ -8,10 +8,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     animation: opoacity 0.8s ease;
-    background: #FFEFBA;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #FFFFFF, #f7b155);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, rgb(235, 190, 106),rgb(241, 166, 68), rgb(253, 126, 0)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #FFEFBA;
+    min-height: 100vh;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #f7b155);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgb(235, 190, 106), rgb(241, 166, 68), rgb(253, 126, 0));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 @keyframes opoacity {

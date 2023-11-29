@@ -1,9 +1,11 @@
 .home {
     background: url('https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1nfGVufDB8fDB8fA%3D%3D&w=1000&q=80') center center/cover;
     background-repeat: no-repeat;
-    height: 80vh;
     animation: opoacity 0.9s ease-in-out;
     border-radius: 60px 10px;
+    margin: 10px 40px auto;
+    padding-top: 8%;
+    padding-bottom: 8%;
     box-shadow: 0px 0px 12px 2px rgb(255, 255, 255, 0.7);
 }
 
@@ -20,11 +22,13 @@
     transition: all 0.4s ease;
 }
 
-.home .main:not(:hover),.navbar h4:not(:hover) {
+.home .main:not(:hover),
+.navbar li:not(:hover) {
     transform: scale(1);
     transition: all 0.3s ease-in-out;
 }
-.w-sm-50{
+
+.w-sm-50 {
     width: 30%;
     font-size: larger;
 }
@@ -76,48 +80,56 @@ details summary {
     z-index: 3;
 }
 
-.title{
+.title {
     font-weight: 700;
-    font-size: larger;
+    font-size: x-large;
     margin-left: 20px;
-    font-family:sans-serif;
+    font-family: sans-serif;
 }
-.title::first-letter{
-    font-size: 200%;
+
+.title::first-letter {
+    font-size: 50px;
     font-weight: 700;
-    font-style:italic;
+    font-style: italic;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.img-fluid{
+.img-fluid {
     width: 130px;
     margin: auto;
-
 }
 
-.navbar h4:hover{
-    color:rgba(0, 0, 0, 0.8);
-    border-bottom: 3px solid rgb(73, 73, 72);
-    transform: scale(1.1);
+.navbar li:hover {
+    transform: scale(1.3);
     font-family: Arial, Helvetica, sans-serif;
     transition: all ease 0.2s;
 }
-.bg-custum{
+
+.bg-custum {
     color: rgba(0, 0, 0, 0.8);
-    background: #f12711;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
-background:linear-gradient(to right, rgb(235, 177, 69),rgb(241, 166, 68), rgb(253, 143, 0));/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #f12711;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgb(235, 177, 69), rgb(241, 166, 68), rgb(253, 143, 0));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     width: 200px;
 }
 
-    
-   
-    
-
-.bg-wheat{
-    background-color: white;
+button span {
+    scale: 2;
+    margin: 10px;
 }
+
+
+
+.bg-wheat {
+    background-color: wheat;
+}
+
+
+
 .relative {
     position: relative !important;
     font-size: 30px;
@@ -155,22 +167,17 @@ input {
     margin: auto;
 }
 
-@media (max-width:650px) {
-    .home{
+@media screen and (max-width:650px) {
+    .home {
         height: 50vh;
     }
-    .title{
-    font-size: x-large;
-}
 
-.title::first-letter{
-    font-size: xx-large;
-}
-.navbar h4{
-    font-size: 20px;
-    margin: auto;
-    width: 50%;
-}
+    .navbar h4 {
+        font-size: 20px;
+        margin: auto;
+        width: 50%;
+    }
+
     .text-responsive label,
     button {
         font-size: 100px;
@@ -190,7 +197,8 @@ input {
     .text-res label {
         font-size: large;
     }
-    .w-sm-50{
+
+    .w-sm-50 {
         width: 100%;
         font-size: medium;
     }

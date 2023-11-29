@@ -25,7 +25,7 @@ const Home = () => {
         toggleload()
     }
     return (
-        <div className="container text-responsive py-4 rounded text-capitalize">
+        <div className="pb-5 px-5 text-responsive rounded text-capitalize">
             <div className="d-flex align-middle home">
                 <div className="m-auto main d-flex w-50 h-50 rounded p-5 text-center">
                     <div className="m-auto box">
@@ -40,8 +40,8 @@ const Home = () => {
                 <form onSubmit={(e) => handelsubmit(e)} className='d-flex justify-content-center container'>
                     <input type="search" name='search' value={searchLowerCase} onChange={(e) => {
                         setsearch(e.target.value.toLowerCase())
-                    }} className='text-dark p-3 m-2 rounded w-100' placeholder='Search your exercise by bodyparts, equipment or target muscles' />
-                    <button type='submit' className='btn btn-danger m-2 fw-semibold'>Submit</button>
+                    }} className='text-dark p-3 m-2 rounded w-100' placeholder='Search your favirate exercise by name, bodyparts, equipment or target muscles' />
+                    <button type='submit' className='btn btn-danger m-2 fw-semibold'>search</button>
                 </form>
                 <div className="bg-light rounded my-5 w-100">
                     {searchdata[0] && <div className="container">
@@ -50,7 +50,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div id='main' className="mx-2 container">
+            <div id='main' className="mx-2">
                 <div className="my-4">
                     <h3 className=' h2 m-auto my-4 border-2 border-bottom border-dark p-2'>search by bodyparts</h3>
                     <Bodyparts />

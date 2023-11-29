@@ -51,7 +51,7 @@ const Exercise = () => {
                     <img style={{ display: skeleton ? 'none' : 'block' }} onLoadCapture={() => {
                         setskeleton(false)
                     }}
-                        src={exercise.gifUrl} className="img-fluid shadow-1 m-auto rounded" alt="gif" />
+                        src={exercise.gifUrl} className=" shadow-1 m-auto rounded" alt="gif" />
                 </div>
                 <div className="m-auto  w-sm-50 felx-1 px-4 text-res">
                     <p className='text-center '>exercise keep you strong and increase muscles in <b>{exercise.target || <Skeleton />}</b> ,this is one of the best exercise to target your <b>{exercise.bodyPart || <Skeleton />}</b> using <b>{exercise.equipment || <Skeleton />}</b> <br />
