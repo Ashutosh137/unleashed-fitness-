@@ -26,9 +26,9 @@ const Muscles = () => {
         <div className='m-auto bg-light rounded'>
             <div className="d-flex justify-content-center flex-wrap p-3 " >
                 {targetList.slice(pre1, next1).map((item, index) => {
-                    return <div key={index} className="w-25 my-4 card border-2 p-2" >
+                    return <div key={index} className="w-25 my-4 card border-2 p-4" >
                         <img className='img-fluid  mb-3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyMyQqOKCPUxwvCBKi_WXiiNSnPhJmgoqRDQ&usqp=CAU" alt="" />
-                        <button onClick={() => { fetch(item) }} className="text-responsive text-center text-capitalize p-1 border-1 border-danger border">{item||<Skeleton />}</button>
+                        <button onClick={() => { fetch(item) }} className="text-responsive w-100  m-auto text-center text-capitalize p-1 border-1 border-danger border">{item||<Skeleton />}</button>
                     </div>
 
                 })}
@@ -42,7 +42,7 @@ const Muscles = () => {
                     </li>
                     <li className=' m-auto overflow-scroll d-flex'>
                         {myList.map((item,index) => {
-                                return <button key={index} className="page-link mx-1 curser-pointer rounded text-primary border-0 text-responsive" onClick={() => {
+                                return <button key={index} className="page-link mx-1 curser-pointer rounded text-primary border-0 " onClick={() => {
                                     setpre1(item * 4); setnext1((item + 1) * 4);
                                 }}>{item + 1}</button>
                             })}
@@ -54,7 +54,7 @@ const Muscles = () => {
                     </li>
                 </ul>
             </div>
-            <div className="container py-1">
+            <div className=" py-1">
                 <Search exercise={search} n={2} />
             </div>
 

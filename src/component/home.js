@@ -10,6 +10,7 @@ const Home = () => {
     const [searchLowerCase, setsearch] = useState("")
     const [searchdata, setsearchdata] = useState([])
     const { data: { allexercise } } = useContext(MyContext)
+
     const handelsubmit = (e) => {
         e.preventDefault();
         toggleload()
@@ -25,11 +26,11 @@ const Home = () => {
         toggleload()
     }
     return (
-        <div className="pb-5 px-5 text-responsive rounded text-capitalize">
+        <div className="pb-5 text-responsive rounded text-capitalize">
             <div className="d-flex align-middle home">
                 <div className="m-auto main d-flex w-50 h-50 rounded p-5 text-center">
-                    <div className="m-auto box">
-                        <h1>sweet ,smile and repeat </h1><p>Train with Passion, Achieve Greatness</p>
+                    <div className="m-auto">
+                        <h1>sweet ,smile and repeat </h1><hr /><p>Train with Passion, Achieve Greatness</p>
                         <button className='btn btn-danger m-2 text-capitalize'><a href="#main" className='text-decoration-none text-light'>get started</a></button>
 
                     </div>
@@ -37,14 +38,14 @@ const Home = () => {
             </div>
             <div className="my-4 py-2">
                 <h1 className='text-center h2 my-4'>awesome exercises you should know</h1>
-                <form onSubmit={(e) => handelsubmit(e)} className='d-flex justify-content-center container'>
+                <form onSubmit={(e) => handelsubmit(e)} className='d-flex '>
                     <input type="search" name='search' value={searchLowerCase} onChange={(e) => {
                         setsearch(e.target.value.toLowerCase())
                     }} className='text-dark p-3 m-2 rounded w-100' placeholder='Search your favirate exercise by name, bodyparts, equipment or target muscles' />
                     <button type='submit' className='btn btn-danger m-2 fw-semibold'>search</button>
                 </form>
                 <div className="bg-light rounded my-5 w-100">
-                    {searchdata[0] && <div className="container">
+                    {searchdata[0] && <div className="">
                         <Search exercise={searchdata} n={2} />
                     </div>}
                 </div>

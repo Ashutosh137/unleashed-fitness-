@@ -10,6 +10,7 @@
     animation: opoacity 0.8s ease;
     background: #FFEFBA;
     min-height: 100vh;
+    width: 100%;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #FFFFFF, #f7b155);
     /* Chrome 10-25, Safari 5.1-6 */

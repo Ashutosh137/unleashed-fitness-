@@ -22,12 +22,12 @@ const Bodyparts = () => {
         toggleload()
     }
     return (
-        <div className='m-auto bg-light rounded'>
+        <div className='m-auto bg-light rounded '>
             <div className="d-flex w-100  justify-content-center flex-wrap p-3" >
                 {bodyPartList.slice(pre1, next1).map((item, index) => {
-                    return <div key={index} className="w-25 my-4 card border-2 p-2" >
+                    return <div key={index} className="w-25  my-4 card border-2 py-4" >
                         <img className='img-fluid mb-3' src="https://t4.ftcdn.net/jpg/02/19/15/99/240_F_219159923_iCk4Qp5HIlSU7eflsShBFMYwkutGMm9v.jpg" alt="" />
-                        <button onClick={() => { fetch(item) }} className="text-center text-responsive p-1 border-1 border-danger border text-capitalize">{item||<Skeleton />}</button>
+                        <button onClick={() => { fetch(item) }} className="text-center text-responsive  p-1 w-75 m-auto border-1 border-danger border text-capitalize">{item||<Skeleton />}</button>
                     </div>
 
                 })}
@@ -40,7 +40,7 @@ const Bodyparts = () => {
                         </li>
                         <li className='m-auto overflow-scroll d-flex'>
                             {myList.map((item,index) => {
-                                return <button key={index} className="page-link mx-1 curser-pointer rounded text-primary border-0 text-responsive" onClick={() => {
+                                return <button key={index} className="page-link mx-1 curser-pointer rounded text-primary border-0 " onClick={() => {
                                     setpre1(item * 4); setnext1((item + 1) * 4);
                                 }}>{item + 1}</button>
                             })}

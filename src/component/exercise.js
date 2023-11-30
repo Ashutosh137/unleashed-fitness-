@@ -40,21 +40,21 @@ const Exercise = () => {
 
 
     return (
-        <div className="mx-5  p-5 text-responsive rounded py-5 bg-light text-capitalize m-auto">
+        <div className="mx-5  p-5 text-responsive rounded py-5 bg-white text-capitalize m-auto">
             <div className="text-center h3 py-3">
                 <h3 className='h4 fw-bold border-bottom border-1  border-dark py-3'>{exercise.name}</h3>
             </div>
 
             <div className="d-flex felx justify-content-center">
-                <div className=" felx-1 py-5 rounded">
+                <div className=" felx-1 w-25 m-auto py-5 rounded">
                     {skeleton && <Skeleton count={10} />}
                     <img style={{ display: skeleton ? 'none' : 'block' }} onLoadCapture={() => {
                         setskeleton(false)
                     }}
-                        src={exercise.gifUrl} className=" shadow-1 m-auto rounded" alt="gif" />
+                        src={exercise.gifUrl} className="rounded w-100" alt="gif" />
                 </div>
                 <div className="m-auto  w-sm-50 felx-1 px-4 text-res">
-                    <p className='text-center '>exercise keep you strong and increase muscles in <b>{exercise.target || <Skeleton />}</b> ,this is one of the best exercise to target your <b>{exercise.bodyPart || <Skeleton />}</b> using <b>{exercise.equipment || <Skeleton />}</b> <br />
+                    <p className='h5'>exercise keep you strong and increase muscles in <b>{exercise.target || <Skeleton />}</b> ,this is one of the best exercise to target your <b>{exercise.bodyPart || <Skeleton />}</b> using <b>{exercise.equipment || <Skeleton />}</b> <br /> <hr />
                      it will help you to improve your mood and energy </p>
 
                 </div>
@@ -66,7 +66,7 @@ const Exercise = () => {
                 setfavourite([...favourite, id])
             }}></i>}
 
-            <div className='container mt-5'>
+            <div className=' mt-5'>
                 <h1 className=' m-3 h3 border-2 border-bottom border-danger'>similar target muscles exercise</h1>
                 <Search exercise={similar_target} n={2} />
                 <h1 className='m-3 h3 border-2 border-bottom border-danger'>similar equipments exercise</h1>

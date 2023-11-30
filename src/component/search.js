@@ -27,20 +27,20 @@ export const Search = (props) => {
 
 
     return (<>
-        {search[0] ? <div className="container rounded bg-light py-4 text-responsive text-capitalize">
+        {search[0] ? <div className=" rounded bg-light py-4 text-responsive text-capitalize">
             <div className="text-center m-auto py-3">
                 <h2 className='h5'>showing results : <span className='fw-semmibold'> {search.length}</span></h2>
             </div>
-            <div className="d-flex mb-5 flex-wrap justify-content-around border border-3 shadow p-2 border-danger rounded ">
+            <div className="d-flex mb-5 flex-wrap justify-content-around rounded ">
                 {search.slice(pre, next).map((item, index) => {
 
-                    return <Link key={index} className='text-dark bg-wheat  curser-pointer w-fixed m-3 btn p-3 shadow border-bottom border-3 border-dark text-decoration-none' to={`/exercises/${item.id}`}>
+                    return <Link key={index} className='text-dark bg-white  curser-pointer m-3 btn p-3 shadow border-bottom border-3 border-dark text-decoration-none' to={`/exercises/${item.id}`}>
                         {skeleton && <Skeleton count={10}/>}
                         <img style={{ display: skeleton ? 'none' : 'block' }} onLoadCapture={() => {
                             setskeleton(false)
                         }}
-                            src={item.gifUrl} className="img-fluid rounded" alt="gif" />
-                        <div className="d-flex mt-4 mb-2 flex-wrap  text-responsive">
+                            src={item.gifUrl} className="w-100 rounded" alt="gif" />
+                        <div className="d-flex mt-4 mb-2 flex-wrap">
                             <button className="m-2 btn p-1  text-capitalize m-auto rounded border px-3 border-2 border-dark bg-light">{item.bodyPart}</button>
                             <button className="btn m-auto my-2  text-capitalize rounded border border-2 px-3 p-1 border-dark bg-light">{item.target}</button>
                         </div>
@@ -57,7 +57,7 @@ export const Search = (props) => {
                     </li>
                     <li className='m-2 m-auto overflow-scroll d-flex'>
                         {myList.map((item, index) => {
-                            return <button key={index} className="page-link mx-1 curser-pointer rounded text-primary border-0 text-responsive" onClick={() => {
+                            return <button key={index} className="page-link mx-1 curser-pointer rounded text-primary border-0 " onClick={() => {
                                 setpre(item * n); setnext((item + 1) * n);
                             }}>{item + 1}</button>
                         })}

@@ -26,8 +26,8 @@ export const Favourite = () => {
   }, [favourite])
 
   return (
-    <div className='rounded container'>
-      <div className=''>{favouriteexercise[0] ? <Search exercise={favouriteexercise} n={favouriteexercise.length +1 } /> : <h1 className='text-center text-capitalize bg-light p-5 text-suceess'>add favourite</h1>}</div>
+    <div className='rounded w-full'>
+      <div className=''>{favouriteexercise[0] ? <Search exercise={favouriteexercise} n={6} /> : <h1 className='text-center text-capitalize bg-light p-5 text-suceess'>add favourite</h1>}</div>
     </div>
   )
 }
