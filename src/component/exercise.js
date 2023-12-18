@@ -47,7 +47,7 @@ const Exercise = () => {
 
             <div className="d-flex felx justify-content-center">
                 <div className=" felx-1 w-25 m-auto py-5 rounded">
-                    {skeleton && <Skeleton count={10} />}
+                    {skeleton && <Skeleton  height={20} width={200} />}
                     <img style={{ display: skeleton ? 'none' : 'block' }} onLoadCapture={() => {
                         setskeleton(false)
                     }}

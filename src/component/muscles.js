@@ -22,6 +22,8 @@ const Muscles = () => {
 
     }
 
+
+
     return (
         <div className='m-auto bg-light rounded'>
             <div className="d-flex justify-content-center flex-wrap p-3 " >
@@ -42,7 +44,7 @@ const Muscles = () => {
                     </li>
                     <li className=' m-auto overflow-scroll d-flex'>
                         {myList.map((item,index) => {
-                                return <button key={index} className="page-link mx-1 curser-pointer rounded text-primary border-0 " onClick={() => {
+                                return <button key={index} className="text-primary mx-1 p-2 h5 bg-white curser-pointer border-0 rounded px-3" onClick={() => {
                                     setpre1(item * 4); setnext1((item + 1) * 4);
                                 }}>{item + 1}</button>
                             })}

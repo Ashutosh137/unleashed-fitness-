@@ -35,7 +35,7 @@ export const Search = (props) => {
                 {search.slice(pre, next).map((item, index) => {
 
                     return <Link key={index} className='text-dark bg-white  curser-pointer m-3 btn p-3 shadow border-bottom border-3 border-dark text-decoration-none' to={`/exercises/${item.id}`}>
-                        {skeleton && <Skeleton count={10}/>}
+                        {skeleton && <Skeleton  height={400} width={300}/>}
                         <img style={{ display: skeleton ? 'none' : 'block' }} onLoadCapture={() => {
                             setskeleton(false)
                         }}
@@ -57,7 +57,7 @@ export const Search = (props) => {
                     </li>
                     <li className='m-2 m-auto overflow-scroll d-flex'>
                         {myList.map((item, index) => {
-                            return <button key={index} className="page-link mx-1 curser-pointer rounded text-primary border-0 " onClick={() => {
+                            return <button key={index} className="text-primary mx-1 p-2 h5 bg-white curser-pointer border-0 rounded px-3" onClick={() => {
                                 setpre(item * n); setnext((item + 1) * n);
                             }}>{item + 1}</button>
                         })}
