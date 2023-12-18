@@ -42,6 +42,16 @@ const App = () => {
     fetch()
   }, [])
 
+  useEffect(()=>{
+    if(data.bodyPartList==[null] || data.targetList==[null] || data.equipmentList==[null] || data.allexercise==[null]){
+      setload(true)
+    }
+    else{
+      setload(false)
+    }
+    
+  }, [data])
+
 
   const toggleload = () => {
     setload(prevLoad => !prevLoad);
