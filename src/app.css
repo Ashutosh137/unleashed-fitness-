@@ -117,14 +117,14 @@ details summary {
 
 
 button span {
-    scale: 1.6;
+    scale: 1.2;
     padding: 30px;
     margin: 30px;
     border-radius: 5px;
 }
 
 .text-responsive{
-    font-size: larger;
+    font-size: large;
 }
 
 
@@ -165,3 +165,4 @@ input {
     width: 350px;
     margin: auto;
 }
+

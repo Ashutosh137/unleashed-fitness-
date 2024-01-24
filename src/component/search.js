@@ -34,7 +34,7 @@ export const Search = (props) => {
             <div className="d-flex mb-5 flex-wrap justify-content-around rounded ">
                 {search.slice(pre, next).map((item, index) => {
 
-                    return <Link key={index} className='text-dark bg-white  curser-pointer m-3 btn p-3 shadow border-bottom border-3 border-dark text-decoration-none' to={`/exercises/${item.id}`}>
+                    return <Link key={index} className='text-dark bg-white curser-pointer btn p-3 shadow border-bottom border-3 border-dark text-decoration-none' to={`/exercises/${item.id}`}>
                         {skeleton && <Skeleton  height={400} width={300}/>}
                         <img style={{ display: skeleton ? 'none' : 'block' }} onLoadCapture={() => {
                             setskeleton(false)
