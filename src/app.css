@@ -124,7 +124,7 @@ button span {
 }
 
 .text-responsive{
-    font-size: large;
+    font-size: larger;
 }
 
 
@@ -157,7 +157,7 @@ button span {
 
 .text-responsive>button,
 input {
-    font-size: large;
+    font-size: larger;
     background: white;
 }
 
