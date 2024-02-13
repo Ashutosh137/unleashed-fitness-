@@ -1,7 +1,8 @@
 {
   "short_name": "Unleashed Fitness",
   "name": "Unleashed Fitness",
-  "icons": [    {
+  "icons": [
+    {
       "src": "logo.png",
       "type": "image/png",
       "sizes": "192x192"
@@ -11,6 +12,6 @@
   "start_url": ".",
   "display": "fullscreen",
   "theme_color": "#000000",
-  "prefer_related_applications":false,
+  "prefer_related_applications": false,
   "background_color": "#ffffff"
 }

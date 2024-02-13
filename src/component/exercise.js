@@ -22,7 +22,7 @@ const Exercise = () => {
       toggleload();
 
       try {
-        const exercisedata = allexercise.find((item) => item.id === id);
+        const exercisedata = allexercise?.find((item) => item.id === id);
         const similar_equipment1 = allexercise.filter(
           (item) => item.equipment === exercisedata.equipment
         );
@@ -41,18 +41,18 @@ const Exercise = () => {
 
     fetchExerciseData();
     window.scrollTo(0, 0);
-  }, [id]);
+  }, [id, allexercise]);
 
   return (
-    <div className="mx-5  p-5 text-responsive rounded py-5 bg-white text-capitalize m-auto">
-      <div className="text-center h3 py-3">
+    <div className="mx-5  p-5 text-responsive rounded  bg-white text-capitalize m-auto">
+      <div className="text-center h3 ">
         <h3 className="h4 fw-bold border-bottom border-1  border-dark py-3">
           {exercise?.name}
         </h3>
       </div>
 
       <div className="d-flex felx justify-content-center">
-        <div className=" felx-1 w-25 m-auto py-5 rounded">
+        <div className=" felx-1 w-25 m-auto py-2 rounded">
           {skeleton && <Skeleton height={20} width={200} />}
           <img
             style={{ display: skeleton ? "none" : "block" }}
@@ -76,7 +76,7 @@ const Exercise = () => {
       </div>
       {favourite.includes(id) ? (
         <i
-          className="bi bi-bookmark-heart-fill relative"
+          className="bi bi-bookmark-heart-fill relative text-danger"
           onClick={() => {
             setfavourite(favourite?.filter((item) => item !== id));
           }}
