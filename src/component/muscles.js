@@ -21,7 +21,7 @@ const Muscles = () => {
 
   async function fetch(item) {
     toggleload();
-    const url = `https://exercisedb.p.rapidapi.com/exercises/target/${item}`;
+    const url = `https://exercisedb.p.rapidapi.com/exercises/target/${item}?limit=300`;
     const data1 = await Fetchdata(url).catch((err) => {
       console.log(err);
     });
