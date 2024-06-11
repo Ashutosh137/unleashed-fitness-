@@ -20,7 +20,7 @@ const Equipment = () => {
   const myList = Array.from({ length: slider }, (_, index) => index);
   async function fetch(item) {
     toggleload();
-    const url = `https://exercisedb.p.rapidapi.com/exercises/equipment/${item}`;
+    const url = `https://exercisedb.p.rapidapi.com/exercises/equipment/${item}?limit=300`;
     const data1 = await Fetchdata1(url).catch((err) => {
       console.log(err);
     });
