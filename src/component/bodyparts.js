@@ -23,7 +23,7 @@ const Bodyparts = () => {
 
   async function fetch(item) {
     toggleload();
-    const url = `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${item}`;
+    const url = `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${item}?limit=300`;
     const data1 = await Fetchdata1(url).catch((err) => {
       console.log(err);
     });
