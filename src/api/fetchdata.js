@@ -19,7 +19,7 @@ const Fetchdata = async () => {
       !(datat.bodyPartList[1] || datat.targetList[1] || datat.equipmentList[1])
     ) {
       var response = await fetch(
-        `https://exercisedb.p.rapidapi.com/exercises/${item}`,
+        `https://exercisedb.p.rapidapi.com/exercises/${item}?limit=300`,
         options
       ).catch((err) => {
         return "fail";
@@ -31,7 +31,7 @@ const Fetchdata = async () => {
 
   if (!datat.allexercise[1]) {
     var response1 = await fetch(
-      `https://exercisedb.p.rapidapi.com/exercises`,
+      `https://exercisedb.p.rapidapi.com/exercises?limit=1500`,
       options
     ).catch((err) => {
       return "fail";
